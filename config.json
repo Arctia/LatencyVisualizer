@@ -1,0 +1,16 @@
+{
+	"mode": "compact",
+	"host": "google.it",
+	"port": 443,
+	"color_ranges": {
+		"optimal": 50,
+		"good": 150,
+		"warn": 230
+	},
+	"colors": {
+		"optimal": "#00ee33",
+		"good": "#00cc55",
+		"warn": "orange",
+		"critical": "red"
+	}
+}
