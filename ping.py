@@ -37,7 +37,7 @@ class PingOverlay:
         self.root.attributes('-topmost', True)
         self.root.attributes('-transparentcolor', 'green')
         
-        self.root.geometry('130x60+20+50') #compact mode TODO others
+        self.root.geometry('100x60+20+50') # TODO: different modes
         
         self.canvas = tk.Canvas(
             self.root,
