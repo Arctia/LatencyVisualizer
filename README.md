@@ -10,6 +10,13 @@ A lightweight, draggable overlay that displays real-time ping times to a configu
 * Clean, minimal interface
 * Automatic color changes based on ping times
 
+## Release
+* download the release from github to get the compiled version
+* customize host, port and whatever you want in the config.json file
+* run the program
+* click and drag the red dot (●) to move the overlay
+* right-click the red dot to close the application
+
 ## Installation
 
 1. Clone the repository:
@@ -22,6 +29,7 @@ git clone https://github.com/Arctia/LatencyVisualizer.git
     "mode": "compact",
     "host": "google.it",
     "port": 443,
+    "interval": 1.0,
     "color_ranges": {
         "optimal": 50,
         "good": 150,
