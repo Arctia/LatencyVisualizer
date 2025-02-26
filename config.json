@@ -2,6 +2,7 @@
 	"mode": "compact",
 	"host": "google.it",
 	"port": 443,
+	"interval": 3.0,
 	"color_ranges": {
 		"optimal": 50,
 		"good": 150,

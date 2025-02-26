@@ -13,6 +13,7 @@ class Config:
         self.port: int = 0
         self.color_ranges: Dict[str, int] = {}
         self.colors: Dict[str, str] = {}
+        self.interval: float = 1.0
     
     @classmethod
     def from_json(cls, json_path: str) -> 'Config':
@@ -24,6 +25,7 @@ class Config:
             config.port = data['port']
             config.color_ranges = data['color_ranges']
             config.colors = data['colors']
+            config.interval = data.get('interval', 1.0)
         return config
     
     def __str__(self) -> str:
@@ -114,6 +116,12 @@ class PingOverlay:
 
             if self.current_ping == "--":
                 color = conf.colors.get("critical", "red")
+                self.ping_label.config(
+                    text=f"---",
+                    fg=color
+                )
+                time.sleep(2.0)
+                continue
             elif float(self.current_ping) < conf.color_ranges.get("optimal", 50):
                 color = conf.colors.get("optimal", "#00ee33")
             elif float(self.current_ping) < conf.color_ranges.get("good", 150):
@@ -127,7 +135,7 @@ class PingOverlay:
                 text=f"{int(float(self.current_ping))}",
                 fg=color
             )
-            time.sleep(1)
+            time.sleep(conf.interval)
 
     def start_drag(self, event):
         self.dragging = True
